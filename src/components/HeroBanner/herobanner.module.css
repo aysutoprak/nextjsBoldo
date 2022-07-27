@@ -1,0 +1,26 @@
+.herobanner_div{
+    display: flex;
+    width: 1102px;
+    height: 632px;
+    margin-left: auto;
+    margin-right: auto;
+    gap : 50px;
+}
+
+.banner_left{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.banner_mid{
+    width: 400px;
+}
+
+.banner_right{
+    width:302px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

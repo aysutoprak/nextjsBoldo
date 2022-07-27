@@ -1,0 +1,39 @@
+.header_div{
+    height:517px;
+    background-color: #0a2640;
+    width: 1400;
+    color: white;
+    display: flex;
+}
+
+.about_div{
+    width: 888px;;
+    height: 279px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_first{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.header_second{
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 84px;
+    text-align: center;
+}
+
+.header_third{
+    text-align: center;
+    margin-top: 17.5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
