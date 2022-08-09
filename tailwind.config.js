@@ -7,7 +7,13 @@ module.exports = {
     './src/layouts/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'staples-red': '#cc0000',
+        'staples-blue': '#037f96',
+        'staples-grey': '#747679',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('tailgrids/plugin')],
 };
