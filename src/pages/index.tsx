@@ -21,7 +21,7 @@ function Index(): JSX.Element {
   const headerThird =
     'Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment non-disclosure.';
   const variant = 'primary';
-  const color = 'yellow';
+  const color = 'default';
   const buttonText = 'Click';
   const fill = 'light';
   const isLoading = true;
