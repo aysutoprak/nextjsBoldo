@@ -15,7 +15,7 @@
     "tsconfigRootDir": "."
   },
   "rules": {
-    "prettier/prettier" :0,
+    "prettier/prettier": 0,
     "react/destructuring-assignment": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/require-default-props": "off",

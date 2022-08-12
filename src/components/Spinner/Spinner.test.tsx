@@ -20,7 +20,7 @@ describe('Spinner Unit Tests', () => {
     const fill: SpinnerFill = 'dark';
     const newprop: SpinnerProps = { ...props, fill };
     const component = render(<Spinner {...newprop} />);
-    const element = component.container.querySelector<HTMLButtonElement>('svg');
+    const element = component.container.querySelector<SVGElement>('svg');
     expect(element?.classList.contains('fill-black')).toBeTruthy();
   });
 
@@ -28,7 +28,7 @@ describe('Spinner Unit Tests', () => {
     const fill: SpinnerFill = 'light';
     const newprop: SpinnerProps = { ...props, fill };
     const component = render(<Spinner {...newprop} />);
-    const element = component.container.querySelector<HTMLButtonElement>('svg');
+    const element = component.container.querySelector<SVGElement>('svg');
     expect(element?.classList.contains('fill-white')).toBeTruthy();
   });
 });

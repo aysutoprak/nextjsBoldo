@@ -11,12 +11,13 @@ const Spinner = ({ fill }: SpinnerProps) => {
   return (
     <div role="status">
       <svg
+        data-testid="spinner"
         aria-hidden="true"
         className={clsx(
           'mr-2 h-8 w-8 animate-spin text-gray-200 dark:text-gray-600',
           {
-            'fill-white': fill === 'light',
             'fill-black': fill === 'dark',
+            'fill-white': fill === 'light',
           }
         )}
         viewBox="0 0 100 101"
