@@ -13,6 +13,18 @@ module.exports = {
         'staples-blue': '#037f96',
         'staples-grey': '#747679',
       },
+      padding:{
+        'sm-rem-p': '.4rem',
+        '3.25rem': '3.25rem',
+        '0.725rem' : '0.725rem'
+      },
+      lineHeight: {
+        '.8': '.8',
+      },
+      height: {
+        '2.375rem': '2.375rem',
+        '0.75rem' : '0.75rem'
+      },
     },
   },
   plugins: [require('tailgrids/plugin')],

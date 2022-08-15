@@ -20,4 +20,5 @@ Default.args = {
   color: 'default',
   buttonText: 'Click',
   isLoading: true,
+  size: 'medium',
 };

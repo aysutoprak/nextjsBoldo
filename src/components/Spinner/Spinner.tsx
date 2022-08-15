@@ -2,12 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 
 export type SpinnerFill = 'light' | 'dark';
+export type SpinnerSize = 'small' | 'medium' | 'large';
 
 export interface SpinnerProps {
   fill?: SpinnerFill;
+  spinnerSize?: SpinnerSize;
 }
 
-const Spinner = ({ fill }: SpinnerProps) => {
+const Spinner = ({ fill, spinnerSize }: SpinnerProps) => {
   return (
     <div role="status">
       <svg
@@ -18,6 +20,11 @@ const Spinner = ({ fill }: SpinnerProps) => {
           {
             'fill-black': fill === 'dark',
             'fill-white': fill === 'light',
+          },
+          {
+            'h-0.75rem': spinnerSize === 'small',
+            'h-5': spinnerSize === 'medium',
+            'h-7': spinnerSize === 'large',
           }
         )}
         viewBox="0 0 100 101"

@@ -25,6 +25,7 @@ function Index(): JSX.Element {
   const buttonText = 'Click';
   const fill = 'light';
   const isLoading = true;
+  const size = 'medium';
 
   return (
     <>
@@ -45,6 +46,7 @@ function Index(): JSX.Element {
         color={color}
         buttonText={buttonText}
         isLoading={isLoading}
+        size={size}
       ></Button>
       <Spinner fill={fill} />
     </>
