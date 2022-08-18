@@ -18,7 +18,7 @@ export const Default = Template.bind({});
 Default.args = {
   variant: 'primary',
   color: 'default',
-  buttonText: 'Click',
+  buttonText: 'CLICK',
   isLoading: true,
   size: 'medium',
 };

@@ -14,7 +14,7 @@ export interface ButtonProps
   buttonText?: string;
   isLoading?: boolean;
   size?: ButtonSize;
-  icon?: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  icon?: React.ReactElement;
   iconLabel?: string;
 }
 
@@ -36,9 +36,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (variant === 'icon' && Icon !== undefined) {
 		return (
-			<button>
-				<Icon />
-				<span className="sr-only">{iconLabel}</span>
+      <button>
+        {Icon}
+				<span data-testid="icon-label" className="sr-only">{iconLabel}</span>
 			</button>
 		);
 	}
@@ -47,7 +47,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={clsx(
-          'rounded-md px-5 min-w-[10.4375rem] flex justify-center text-center',
+          'rounded-md px-5 min-w-[10.4375rem] flex justify-center group',
           {
             'disabled:bg-gray-400 disabled:text-gray-600 disabled:border-gray-600' : variant === 'primary',
             'disabled:bg-transparent disabled:text-gray-400 disabled:border-gray-400' : variant === 'ghost',
@@ -76,19 +76,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           },
           {
             'p-1.5 h-6 text-xs leading-3': size === 'small',
-            'py-0.725rem h-10 px-3.25rem p-2.375rem  text-base leading-.8': size === 'medium' && isLoading === false,
-            'py-2 h-10': size === 'medium' && isLoading === true,
-            'py-5 h-14 px-12 text-base leading-none ': size === 'large' && isLoading === false,
-            'py-3 h-14': size === 'large'&& isLoading === true,
+            'py-2 px-12 h-10 text-base': size === 'medium',
+            'py-5 h-16 px-12 text-xl leading-none ': size === 'large'
           },
           className
         )}
         {...props}
       >
-        {isLoading && size === 'small' ? <Spinner spinnerSize="small" fill="light" /> :
-        isLoading && size === 'medium' ? <Spinner spinnerSize="medium" fill="light" /> :
-        isLoading && size === 'large' ? <Spinner spinnerSize="large" fill="light" /> :
-        buttonText}
+        {!isLoading && buttonText}
+        {isLoading && <Spinner
+          size={size}
+          fill={variant === 'primary' ? 'light' : 'dark'}
+        />}
       </button>
     );
   }

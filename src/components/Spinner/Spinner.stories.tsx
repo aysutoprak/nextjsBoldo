@@ -15,6 +15,6 @@ const Template: ComponentStory<typeof Spinner> = (
 export const Default = Template.bind({});
 
 Default.args = {
-  fill: 'light',
-  spinnerSize: 'medium',
+  fill: 'dark',
+  size: 'medium',
 };

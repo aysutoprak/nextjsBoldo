@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Button, { ButtonColor, ButtonVariant, ButtonProps } from './Button';
+import Button, { ButtonColor, ButtonVariant, ButtonProps, ButtonSize } from './Button';
 
 describe('Button Unit Tests', () => {
   let props: ButtonProps;
@@ -153,7 +153,7 @@ describe('Button Unit Tests', () => {
     const component = render(<Button {...newprop} />);
     expect(component.getByTestId('spinner')).toBeInTheDocument();
   });
-  
+
   it('should assert class names are correct when variant is icon and color is default.', () => {
     const variant: ButtonVariant = 'icon';
     const color: ButtonColor = 'default';
@@ -203,5 +203,44 @@ describe('Button Unit Tests', () => {
     const component = render(<Button {...newprop} />);
     const element = component.getByTestId('icon-label');
     expect(element).toBeInTheDocument();
+  });
+
+  it('should assert class names are correct when size is small', () => {
+    const size: ButtonSize = 'small';
+    const expectedClassNames = ['p-1.5', 'h-6', 'text-xs', 'leading-3']
+    const newprop: ButtonProps = { ...props, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(expect.arrayContaining(expectedClassNames))
+  });
+  
+  it('should assert class names are correct when size is medium', () => {
+    const size: ButtonSize = 'medium';
+    const expectedClassNames = ['py-2', 'px-12', 'text-base', 'h-10']
+    const newprop: ButtonProps = { ...props, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(expect.arrayContaining(expectedClassNames))
+  });
+
+  it('should assert class names are correct when size is large', () => {
+    const size: ButtonSize = 'large';
+    const expectedClassNames = ['py-5', 'h-16', 'px-12', 'text-xl', 'leading-none']
+    const newprop: ButtonProps = { ...props, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(expect.arrayContaining(expectedClassNames))
   });
 });
